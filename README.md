@@ -2,7 +2,7 @@
 
 
 
-## create a debian 11 container
+## create a debian 11 container 
 
 
 ## install gnupg
@@ -41,6 +41,9 @@ apt install proxmox-ve postfix open-iscsi
 reboot
 
 ```
+
+
+# or optionaly just use a proxmox VM
 
 ## build and install epoxy
 
