@@ -29,10 +29,18 @@ deb http://security.debian.org/debian-security bullseye-security main contrib
 wget http://download.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 ```
 
-
 ## update
 
 ```apt update && apt dist-upgrade -y```
+
+## install proxmox and deps
+
+```
+apt install proxmox-ve postfix open-iscsi
+
+reboot
+
+```
 
 ## build and install epoxy
 
@@ -61,9 +69,6 @@ git clone git://git.proxmox.com/git/pve-qemu.git
 
 ## install dependncys 
 ```
-apt-get install proxmox-ve
-
-reboot
 
 cd pve-qemu
 
