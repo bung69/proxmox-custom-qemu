@@ -23,6 +23,13 @@ deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription
 deb http://security.debian.org/debian-security bullseye-security main contrib
 ```
 
+## add key
+
+```
+wget http://download.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
+```
+
+
 ## update
 
 ```apt update && apt dist-upgrade -y```
@@ -54,6 +61,10 @@ git clone git://git.proxmox.com/git/pve-qemu.git
 
 ## install dependncys 
 ```
+apt-get install proxmox-ve
+
+reboot
+
 cd pve-qemu
 
 mk-build-deps --install
