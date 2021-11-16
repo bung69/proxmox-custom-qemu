@@ -7,7 +7,9 @@
 
 ## install gnupg
 
-``` apt install gnupg  -y ```
+``` 
+apt install gnupg  -y 
+```
 
 ## update sources at /etc/apt/sources.list :
 
