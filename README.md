@@ -2,7 +2,7 @@
 
 
 
-## create a debian 11 container 
+# Optionaly create a debian 11 proxmox dev container 
 
 
 ## install gnupg
@@ -43,39 +43,64 @@ reboot
 ```
 
 
-# or optionaly just use a proxmox VM
+# Optionaly just use a proxmox VM
+
 
 ## build and install epoxy
 
 https://github.com/anholt/libepoxy
 
-``` apt install devscripts meson libegl1-mesa-dev git -y ```
-
 ```
+apt install meson libegl1-mesa-dev git -y ```
+
 git clone https://github.com/anholt/libepoxy.git
 
 cd libepoxy
-```
 
-```
 mkdir _build && cd _build
+
 meson
+
 ninja
+
 sudo ninja install
 ```
+## install devscripts to help with dependancys
 
-## clone proxmox qemu source
+```
+apt install devscripts -y 
+```
+
+## clone and build proxmox common
+
+```
+cd ~
+
+git clone git://git.proxmox.com/git/pve-common.git
+
+cd pve-common
+
+mk-build-deps --install
+
+make dinstall
+
+```
+
+## clone and build proxmox qemu source
 
 ```
 git clone git://git.proxmox.com/git/pve-qemu.git 
-```
-
-## install dependncys 
-```
 
 cd pve-qemu
 
 mk-build-deps --install
 
 make dinstall
+```
+
+## copy built .deb to real proxmox server
+
+``` 
+rsync
+
 ```
