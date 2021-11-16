@@ -88,12 +88,21 @@ make dinstall
 
 ```
 
-## clone and build proxmox qemu source
+## clone, edit and build proxmox qemu source
 
 ```
 git clone git://git.proxmox.com/git/pve-qemu.git 
 
 cd pve-qemu
+
+nano ./debian/rules
+
+add  --enable-opengl  
+
+and --enable-virglrenderer
+
+and remove --disable-gtk
+
 
 mk-build-deps --install
 
