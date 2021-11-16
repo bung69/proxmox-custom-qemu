@@ -103,6 +103,22 @@ make dinstall
 ## copy built .deb to real proxmox server
 
 ``` 
-rsync
+rsync -a ./pve-qemu-kvm_6.1.0-1_amd64.deb  root@192.168.10.98:/pve-qemu-kvm_6.1.0-1_amd64-opengl.deb
 
 ```
+
+## install on real proxmox server
+
+```
+apt install pve-qemu-kvm_6.1.0-1_amd64-opengl.deb
+
+```
+
+## Keeping your version installed
+
+You can use Apt package pinning to ensure this package isn’t replaced by a later Proxmox update:
+
+```
+apt-mark hold pve-qemu-kvm
+```
+
