@@ -95,7 +95,7 @@ git clone git://git.proxmox.com/git/pve-qemu.git
 
 cd pve-qemu
 
-nano ./debian/rules
+nano ****proxmox-pvesomebullshit****/debian/rules
 
 add  --enable-opengl  
 
